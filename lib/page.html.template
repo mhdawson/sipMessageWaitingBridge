@@ -1,0 +1,66 @@
+<!--
+Copyright 2016 the project authors as listed in the AUTHORS file.
+All rights reserved. Use of this source code is governed by the
+license that can be found in the LICENSE file.
+-->
+
+<html>
+  <head>
+    <title><DASHBOARD_TITLE></title>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      socket = new io.connect('<URL_TYPE>://' + window.location.host);
+
+      socket.on('data', function(data) {
+        if (data.type === 'MESSAGE_WAITING_STATUS') {
+          if (data.state === true) {
+            startFlash();
+          } else {
+            stopFlash();
+          }
+        }
+      });
+
+      var intervalTimer;
+      var indicatorOn = false;
+      var startFlash = function() {
+        var indicatorElem = document.getElementById('indicator');
+        intervalTimer = setInterval(function() {
+          if (indicatorOn === false ) {
+            indicatorElem.style.background = 'red';
+            indicatorOn = true;
+          } else {
+            indicatorElem.style.background = 'grey';
+            indicatorOn = false; 
+          }
+        }, 1000); 
+      }
+
+      var stopFlash = function() {
+        var indicatorElem = document.getElementById('indicator');
+        if (intervalTimer != undefined) {
+          clearInterval(intervalTimer);
+        }
+        indicatorElem.style.background = 'grey';
+        indicatorOn = false;
+      }
+    </script>
+
+    <style>
+      #indicator {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: grey;
+        overflow:hidden;
+      }
+    </style>
+  </head>
+
+  <body padding="0", margin="0">
+    <div id="indicator"></div>
+  </body>
+</html>
