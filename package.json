@@ -1,0 +1,35 @@
+{
+  "name": "micro-app-sip-message-waiting-bridge",
+  "version": "0.0.5",
+  "description": "Bridge between sip message waiting messages and mqtt",
+  "main": "lib/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lib/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhdawson/sipMessageWaitingBridge.git"
+  },
+  "keywords": [
+    "sip",
+    "micro-app-framework",
+    "micro-app",
+    "message",
+    "waiting",
+    "notify"
+  ],
+  "author": "Michael Dawson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhdawson/sipMessageWaitingBridge/issues"
+  },
+  "homepage": "https://github.com/mhdawson/sipMessageWaitingBridge#readme",
+  "dependencies": {
+    "micro-app-framework": "^0.1.4",
+    "mqtt": "^2.0.1",
+    "sipster": "^0.1.0",
+    "socket.io": "^1.5.0",
+    "twilio": "^2.11.0"
+  }
+}
