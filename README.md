@@ -13,10 +13,10 @@ This is a picture of the simple UI.  The panel flashses
 when there is a message waiting and stays grey when there
 are no messages waiting.
 
-!$[messageWaitingUI](https://raw.githubusercontent.com/mhdawson/sipMessageWaitingBridge/master/pictures/message-waiting.jpg?raw=true)
+![messageWaitingUI](https://raw.githubusercontent.com/mhdawson/sipMessageWaitingBridge/master/pictures/message-waiting.jpg?raw=true)
 
 This micro-app can be used with the
-[arduino-esp8266/MessageWaitingIndicator](https://github.com/mhdawson/arduino-esp8266/tree/master/MessageWaiingIndicator)
+[arduino-esp8266/MessageWaitingIndicator](https://github.com/mhdawson/arduino-esp8266/tree/master/MessageWaitingIndicator)
 projecct to provide a physical remote message waiting indicator.
 
 # Configuration
