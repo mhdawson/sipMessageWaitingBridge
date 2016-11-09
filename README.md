@@ -100,11 +100,12 @@ The default instructions for building/making pjsua2 leave out
 one aspect that is required to be able to work with sipster which
 is setting -fPIC when compiling/building.  Other than that I
 followed the instructions in README.txt and then used make install
-to install. 
+to install. If you system does not have sound support you will
+need to add --disable-sound to the ./configure line.
 
 ```
 export CFLAGS="$CFLAGS -fPIC"
-./configure
+./configure --disable-sound
 make dep
 make clean
 make
@@ -121,8 +122,17 @@ or
 npm install https://github.com/mhdawson/sipMessageWaitingBridge
 ```
 
+NOTE: This requires that a PR I've submitted land in the sipster
+repo, until then you will need to replace the sipster node module
+with the contents of: https://github.com/mhdawson/sipster
+with npm:
+
+```
+install https://github.com/mhdawson/sipster
+```
+
 NOTE: I currently have seen some issues running sipster in release
-mode so I used npm rebuild --debug and then renamed the Debug directory
+mode so I used npm --debug rebuild sipster and then renamed the Debug directory
 to Release so that I could run using the debug version which seems
 to run ok.
 
