@@ -31,18 +31,18 @@ The configuration entries that must be updated include:
   window for the GUI.
 * serverPort - port on which the server listens for connections
 * sipster - standard configuration for sipster. Key elements
-  are as showin the example, with the logconfig in the
+  are as shownin the example, with the logconfig in the
   logConfig disabling verbose login, mwiConfig enabling the notify
   message needed to get the message waiting info and idUri,
   regConfig, and sipConfig being set so that
   you can connect to your sip extension.
 * mqtt - object with serverUrl, messageWaitingTopic and
   messageInfoTopic.  The messageWaitingTopic is the topic
-  to which 1 will be posted when messages are waiting and 0
+  to which '1' will be posted when messages are waiting and '0'
   when messages are not longer waiting.  The messageInfoTopic
   is the topic to which information about how many messages
   are waiting will be posted.  If the serverUrl
-  uses tls (ex mqtts: then certsDir must contain the
+  uses tls (ex mqtts:) then certsDir must contain the
   required certificates etc. needed to connect to the
   mqtt server using tls).
 * twilio (optional) - object specifying the accountSID,
@@ -124,7 +124,7 @@ npm install https://github.com/mhdawson/sipMessageWaitingBridge
 NOTE: I currently have seen some issues running sipster in release
 mode so I used npm rebuild --debug and then renamed the Debug directory
 to Release so that I could run using the debug version which seems
-to run ok versus the release mode.
+to run ok.
 
 # Running
 
