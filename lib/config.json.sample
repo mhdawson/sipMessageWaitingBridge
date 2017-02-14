@@ -1,0 +1,39 @@
+{
+  "title": "Message Waiting",
+  "windowSize": { "x":30, "y":30 },
+  "serverPort": 3000,
+  "sipster": {
+    "epconfig": {
+      "logConfig": { "msgLogging": 0,
+                     "consoleLevel": 0,
+                     "level": 0}
+    },
+    "sip": {
+      "idUri": "sip:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "regConfig": { "registrarUri": "sip:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                     "registerOnAdd": true
+                 },
+      "mwiConfig": { "enabled": true,
+                     "expirationSec": 300 },
+      "sipConfig": { "authCreds": [{ "scheme": "digest",
+                                     "realm": "XXXXXXXXXXXXXXXXX",
+                                     "username": "XXXXXXXXXXXXXXXXX",
+                                     "dataType": 0,
+                                     "data": "XXXXXXXXX"
+                                   }]
+                   }
+    }
+  },
+  "mqtt": { "serverUrl": "mqtt:10.1.1.186:1883",
+            "messageWaitingTopic": "phone/messageWaiting",
+            "messageInfoTopic": "phone/info"
+           },
+  "twilio2": { "accountSID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+              "accountAuthToken": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+              "toNumber": "XXXXXXXXXXXX" ,
+              "fromNumber": "XXXXXXXXXX" },
+  "voipms": { "user": "XXXXXXXXXXXXXXXXXX",
+              "password": "XXXXXXXX",
+              "did": "XXXXXXXXXX",
+              "dst": "XXXXXXXXXX" }
+}

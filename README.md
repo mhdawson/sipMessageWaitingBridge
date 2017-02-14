@@ -68,7 +68,7 @@ Example with some sensitve information masked out:
                      "registerOnAdd": true
                  },
       "mwiConfig": { "enabled": true,
-                     "expirationSec": 3600 },
+                     "expirationSec": 300 },
       "sipConfig": { "authCreds": [{ "scheme": "digest",
                                      "realm": "XXXXXXXXXXXXXXXXX",
                                      "username": XXXXXXXXXXXXXXXXX",
